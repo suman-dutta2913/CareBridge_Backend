@@ -20,7 +20,7 @@ async def diagnose_disease(disease_request: DiseaseRequest):
         )
         symptoms = response.choices[0].text.strip().split("\n")
 
-        # Suggest line of action based on disease
+        
         if is_easily_treatable(disease_request.disease_name):
             action = f"This disease seems to be easily treatable. You can try the following medicines: [List of medicines]."
             response1 = openai.Completion.create(
